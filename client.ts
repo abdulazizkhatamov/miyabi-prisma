@@ -1,20 +1,23 @@
-import { PrismaClient } from "./generated/prisma/client";
+// client.ts
+import { PrismaClient as OriginalPrismaClient } from "./generated/prisma/client";
 import { withAccelerate } from "@prisma/extension-accelerate";
 
-// Instantiate the extended Prisma client to infer its type
-const extendedPrisma = new PrismaClient().$extends(withAccelerate());
+// Instantiate extended Prisma client
+const extendedPrisma = new OriginalPrismaClient().$extends(withAccelerate());
 type ExtendedPrismaClient = typeof extendedPrisma;
 
-// Use globalThis for broader environment compatibility
+// globalThis memoization
 const globalForPrisma = globalThis as typeof globalThis & {
   prisma?: ExtendedPrismaClient;
 };
 
-// Named export with global memoization
+// Singleton export
 export const prisma: ExtendedPrismaClient =
   globalForPrisma.prisma ?? extendedPrisma;
-export type { PrismaClient };
 
 if (process.env.NODE_ENV !== "production") {
   globalForPrisma.prisma = prisma;
 }
+
+// Export the **type** of the singleton instance
+export type PrismaClient = ExtendedPrismaClient;
