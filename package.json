@@ -24,7 +24,8 @@
     "db:generate": "npx prisma generate --no-engine",
     "db:migrate": "npx prisma migrate dev",
     "db:deploy": "npx prisma migrate deploy",
-    "db:studio": "npx prisma studio"
+    "db:studio": "npx prisma studio",
+    "postinstall": "npx prisma generate --no-engine"
   },
   "devDependencies": {
     "@types/node": "^24.9.1",
