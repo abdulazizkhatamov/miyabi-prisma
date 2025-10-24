@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2022", // Modern JS features
+    "module": "esnext", // Use ESM for Node
+    "moduleResolution": "node", // Node-style module resolution
+    "lib": ["esnext"], // Modern JS APIs
+    "rootDir": ".", // Root folder for TS source
+    "outDir": "dist", // Compiled files go here
+    "strict": true, // Strict type checking
+    "esModuleInterop": true, // Allows default imports from CJS
+    "allowSyntheticDefaultImports": true, // Works with ts-node
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true, // Skip type checks in node_modules
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true, // Generates .d.ts files
+    "declarationMap": true, // Source maps for types
+    "sourceMap": true // Source maps for debugging
+  },
+  "include": ["**/*.ts", "prisma/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

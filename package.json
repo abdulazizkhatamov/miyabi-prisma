@@ -1,0 +1,38 @@
+{
+  "name": "miyabi-prisma",
+  "version": "1.0.0",
+  "description": "Shared prisma package for miyabi-house.",
+  "keywords": [
+    "shared",
+    "prisma",
+    "miyabi",
+    "miyabi-house"
+  ],
+  "homepage": "https://github.com/abdulazizkhatamov/miyabi-prisma#readme",
+  "bugs": {
+    "url": "https://github.com/abdulazizkhatamov/miyabi-prisma/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulazizkhatamov/miyabi-prisma.git"
+  },
+  "license": "ISC",
+  "author": "Abdulaziz",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "db:generate": "npx prisma generate --no-engine",
+    "db:migrate": "npx prisma migrate dev",
+    "db:deploy": "npx prisma migrate deploy",
+    "db:studio": "npx prisma studio"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "prisma": "^6.18.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/extension-accelerate": "^2.0.2"
+  }
+}
