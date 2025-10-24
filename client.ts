@@ -1,4 +1,4 @@
-import { PrismaClient } from "./generated/client";
+import { PrismaClient } from "./generated/prisma/client";
 import { withAccelerate } from "@prisma/extension-accelerate";
 
 // Instantiate the extended Prisma client to infer its type
