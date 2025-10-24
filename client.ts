@@ -13,6 +13,7 @@ const globalForPrisma = globalThis as typeof globalThis & {
 // Named export with global memoization
 export const prisma: ExtendedPrismaClient =
   globalForPrisma.prisma ?? extendedPrisma;
+export type { PrismaClient };
 
 if (process.env.NODE_ENV !== "production") {
   globalForPrisma.prisma = prisma;

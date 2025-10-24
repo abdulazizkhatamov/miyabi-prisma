@@ -1,6 +1,6 @@
 {
-  "name": "miyabi-prisma",
-  "version": "1.0.5",
+  "name": "shared-miyabi-prisma",
+  "version": "1.0.0",
   "description": "Shared prisma package for miyabi-house.",
   "keywords": [
     "shared",
